@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://b4m82ox16o8rc"]
+
+[ext_resource type="Script" uid="uid://vwvof50skrwp" path="res://survived.gd" id="1_nvae2"]
+[ext_resource type="Texture2D" uid="uid://bowffmsac7hq4" path="res://Asset/Win menu.png" id="2_nvae2"]
+[ext_resource type="Texture2D" uid="uid://c1lx0whqrs1dl" path="res://Asset/Back to Main Menu.png" id="3_b2s30"]
+[ext_resource type="Texture2D" uid="uid://dq27ohmffwsxb" path="res://Asset/Back to Main Menu_hover.png" id="4_trhvh"]
+
+[node name="Survived" type="CanvasLayer"]
+script = ExtResource("1_nvae2")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_nvae2")
+expand_mode = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -176.0
+offset_top = -128.0
+offset_right = 170.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="Main_Menu_Button" type="TextureButton" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_b2s30")
+texture_hover = ExtResource("4_trhvh")
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Main_Menu_Button" to="." method="_on_main_menu_button_pressed"]
