@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dthpl6pt3ek7i"]
+
+[ext_resource type="AudioStream" uid="uid://cnux4r0swoqq3" path="res://audio/One more time, One more chance　- instrumental - (256).mp3" id="1_g84o6"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_g84o6")
+volume_db = -30.532
+autoplay = true

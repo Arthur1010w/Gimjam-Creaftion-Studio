@@ -1,0 +1,180 @@
+[gd_scene load_steps=15 format=3 uid="uid://c3won716i52vq"]
+
+[ext_resource type="Texture2D" uid="uid://cducr2h2outeb" path="res://Asset/Elevator.png" id="1_pusve"]
+[ext_resource type="Texture2D" uid="uid://cb21ef2qlm1sr" path="res://Asset/Icon peluru.png" id="1_vrd06"]
+[ext_resource type="Texture2D" uid="uid://bhnkgv2jw6bcb" path="res://Asset/Icon Hati (1 Heart)-397c.png" id="3_58igv"]
+[ext_resource type="FontFile" uid="uid://ddhbq7fyxrxgn" path="res://fonts/Pix32.ttf" id="3_c8c3f"]
+[ext_resource type="Texture2D" uid="uid://68kfn2v0dgry" path="res://Asset/Icon Hati (2 Heart)-3978.png" id="4_pusve"]
+[ext_resource type="Texture2D" uid="uid://bjj2x5umkypwl" path="res://Asset/Icon Hati (Full)-396e.png" id="5_gqb3i"]
+[ext_resource type="FontFile" uid="uid://3tf6bc3uek4p" path="res://led16sgmnt2-Regular.ttf" id="7_gqb3i"]
+[ext_resource type="Texture2D" uid="uid://djt0123kc6ir5" path="res://Asset/Player1 full heart.png" id="8_c8c3f"]
+[ext_resource type="Texture2D" uid="uid://bbwnhdotypw2g" path="res://Asset/Player2 twoheart.png" id="9_vhwld"]
+[ext_resource type="Texture2D" uid="uid://c1sfrsnfnfs7w" path="res://Asset/Player3 oneheart.png" id="10_83vju"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_58igv"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yqu6c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_gqb3i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_58igv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_pusve")
+}],
+"loop": true,
+"name": &"Healthbar",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yqu6c"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_824mg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_c8c3f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_vhwld")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_83vju")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_pusve")
+
+[node name="Ammo_counter" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -54.0
+offset_right = 140.0
+offset_bottom = -4.0
+grow_vertical = 2
+scale = Vector2(1.1, 1.1)
+
+[node name="Panel" type="Panel" parent="Ammo_counter"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_58igv")
+
+[node name="TextureRect" type="TextureRect" parent="Ammo_counter/Panel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -6.364
+offset_top = -31.455
+offset_right = 121.636
+offset_bottom = 96.545
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_vrd06")
+
+[node name="Label" type="Label" parent="Ammo_counter/Panel"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -108.18182
+offset_top = -19.545454
+offset_right = -30.606064
+offset_bottom = 11.454544
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(1.5, 1.5)
+theme_override_fonts/font = ExtResource("3_c8c3f")
+theme_override_font_sizes/font_size = 25
+text = "  5/45"
+
+[node name="Label2" type="Label" parent="Ammo_counter/Panel/Label"]
+layout_mode = 0
+offset_left = 3.030306
+offset_top = -3.0302992
+offset_right = 43.03031
+offset_bottom = 27.9697
+theme_override_fonts/font = ExtResource("3_c8c3f")
+theme_override_font_sizes/font_size = 25
+text = "x"
+
+[node name="Healthbar" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -35.0
+offset_top = -488.0
+offset_right = 118.33334
+offset_bottom = -388.0
+grow_vertical = 0
+scale = Vector2(1.3, 1.3)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Healthbar"]
+position = Vector2(91, 50)
+sprite_frames = SubResource("SpriteFrames_yqu6c")
+animation = &"Healthbar"
+
+[node name="Floor_indicator" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -16.0
+offset_top = 113.0
+offset_right = 8.5
+offset_bottom = 144.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="Floor_indicator"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_gqb3i")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxFlat_yqu6c")
+text = "1"
+
+[node name="Player_icon" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 170.0
+offset_bottom = 170.0
+scale = Vector2(1.2, 1.2)
+
+[node name="MarginContainer" type="MarginContainer" parent="Player_icon"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 170
+theme_override_constants/margin_bottom = 170
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player_icon/MarginContainer"]
+position = Vector2(65, 83.2)
+scale = Vector2(1.1, 1.1)
+sprite_frames = SubResource("SpriteFrames_824mg")

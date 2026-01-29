@@ -1,0 +1,70 @@
+[gd_scene load_steps=3 format=3 uid="uid://uavl6n2q5qhj"]
+
+[ext_resource type="Texture2D" uid="uid://capp0nk0gjagv" path="res://Asset/bg.png" id="1_q7530"]
+[ext_resource type="Texture2D" uid="uid://fakvwvt4eqmx" path="res://Asset/icon.svg" id="2_0v7bq"]
+
+[node name="Ammo" type="NinePatchRect"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -174.0
+offset_right = 123.0
+offset_bottom = -134.0
+grow_vertical = 2
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_q7530")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+offset_top = 0.5
+offset_right = 128.0
+offset_bottom = 128.5
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_0v7bq")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.5
+offset_top = -21.0
+offset_right = 0.5
+offset_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "5"
+
+[node name="Slash" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -55.0
+offset_top = -21.0
+offset_right = -42.0
+offset_bottom = 21.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "/"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -11.5
+offset_bottom = 11.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "45"
